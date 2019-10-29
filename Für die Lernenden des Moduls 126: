@@ -1,0 +1,115 @@
+Peripheriegeräte im Netzwerkbetrieb einsetzen
+__________________________ 
+## Modul 126 Webmin
+## *Für die Lernenden des Moduls 126:*
+![enter image description here](https://thebroodle.com/wp-content/uploads/2017/06/Webmin-in-Raspberry-Pi.jpg)
+
+									Sarankan Mahendran
+									22.10.2019
+									Herr Calisto
+									BI17, TBZ
+								
+# Inhaltsverzeichnis 
+1. [Webmin Konfiguration](#example)
+2. [Einführung und Auftrag](#example2)
+3. [Materialiste](#example3)
+4. [Installation Webmin auf Raspberry PI:](#example4)
+5. [Erwitterter Auftrag: User Asministration](#example5) 
+6. [Qualitätskontrolle](example6)
+## Webmin Konfiguration
+So sieht die Localhost Webseite des Webmines aus:
+![Image result for webmin raspberry pi](https://cdn.instructables.com/F8G/938I/IBAAKZK3/F8G938IIBAAKZK3.LARGE.jpg?auto=webp&&frame=1&width=1024&fit=bounds)
+
+## Einführung und Auftrag 
+Hallo lieber Benutzer
+
+Wenn Peripheriegeräte von Benutzern administriert werden sollen, reicht ein SSH Zugang oft
+nicht, es braucht ein Webinterface. Sie benutzen deshalb in diesem Werkstatt Auftrag den Webmin.
+Webmin ist eine **Software für Administratoren** um einen Server zu administrieren. Die Software bietet jede Menge Funktionen an damit man einen Rechner über ein Webinterface administrieren kann und nicht über die Kommandozeile. Raspberry Pi Webmin kann man auch für seinen Raspberry Pi einsetzen. Das ist keine eigene Software, man kann die selbe Software wie für Server auch für den kleinen Rechner verwenden, ich zeige euch wie man das macht.
+Mehr dazu unter: http://www.webmin.com/ 
+
+## Los geht´s! Viel Spass und viel Erfolg! :) 
+## Materialiste 
+**Hardware:**
+ - [ ] Raspberry Pi (inkl. Stromkabel
+ - [ ] Zwei LAN Kabel
+ - [ ] Monitor, Maus und Tastatur
+ - [ ] HDMI-, Display-Port-, oder VGA kabel
+ - [ ] Speicherkarte 
+ 
+ **Software:**
+ - [ ] OS-Image (auf der Speicherkarte)
+ - [ ] VNC - Viewer
+ - [ ] Webmin (Localhost)
+
+##  Installation Webmin auf Raspberry PI: 
+
+1. Zuerst müssen Sie noch zwei Libraries für PERL (Skriptsprache) installieren, damit Webmin dann später per SSL auf seinen Server zugreifen kann
+> sudo apt-get install libnet-ssleay-perl libio-socket-ssl-perl
+2. **Neuste MINIMALE Version** auf SourgeForge-Server evaluieren: **1.930**
+[https://sourceforge.net/projects/webadmin/files/webmin/1.930
+**Im Folgenden muss die Vereinsangabe auf 1.930 entsprechend ersetzt/aktualisiert werden!**
+Da Webmin modular aufgebaut ist und die meisten Module für den RasperryPi nicht benötigt
+werden, reicht es aus, die minimale Version von Webmin zu installieren. Als ersten Schritt kann
+man also das Webmin Archiv ins Home Verzeichnis laden. (Oder siehe BSCW falls download
+misslingt... Grösse ca. 2.8MB)
+>**cd**
+>**wget** http://prdownloads.sourceforge.net/webadmin/webmin-1.930-minimal.tar.gz
+3. Danach kann das Tar-Archiv entpackt werden:
+>**tar** -zxvf webmin-1.930-minimal.tar.gz
+4. Nun in das neu erstellte Verzeichnis wechseln und die Installation ausführen:
+>**cd** webmin-1.930
+>**sudo** ./setup.sh
+5. Sämtliche Einstellungen können auf Default gelassen werden, da hier nur Pfade für
+Verzeichnisse angegeben werden.
+Ebenfalls kann der Anmeldenamen auf Default gelassen werden, da er dann einfach **«admin»**
+lautet.
+![](C:\Users\taamasaj\M157 LB3\IMG\1.png)
+6. Zum Schluss muss noch ein Passwort gesetzt werden.
+[BILD]
+7. Hier sieht man nochmals alle relevanten Daten für das Login:
+[BILD]
+8. Als aller letztes kann noch die Option mit «Y» bestätigt werden, dass beim Start des Systems
+Webmin gestartet werden soll.
+Die Installation ist somit abgeschlossen und Webmin wird automatisch gestartet.
+
+	Nun kann von einem anderen Gerät heraus auf den RasPi zugegriffen werden. Wie bereits zu
+	sehen ist, kann man dies über den Hostnamen (oder IP-Adresse) und den Port 10000:
+	«http://hostname:10000/»
+[BILD]
+9. Das Webmin Interface erscheint nun im Browserfenster. Hier kann man unter «Webmin
+Configuration» und dann «Webmin Modules» zusätzliche Module installieren ...
+[BILD]
+10. Punkt (.) «Standart module from www.webmin.com» angewählen!
+Mit [...] kann die Moduldatenbank von Webmin durchstöbert werden, oder direkt ein Link
+angegeben werden. Hier können Sie alle in der Kann-Liste geforderten Module auswählen und
+mit [Install Module] installieren!
+
+	Die nötigen Dateien werden dann heruntergeladen und oft gibt’s gleich eine Möglichkeit das
+Modul zu testen via Button!
+## Erwitterter Auftrag: User Administration
+1. Um weitere User verwalten zu können, wollen wir das «useradmin» Modul installieren. Zum
+Schluss auf [Install Module] klickten und die Installation wird durchgeführt.
+[BILD]
+[BILD]
+2. Nach abgeschlossener Installation kann direkt ins Modul gesprungen werden oder via
+System>User and Groups
+[BILD]
+3. Hier kann nun ein neuer User erstellt werden. Man gibt nun den Namen sowie das Passwort an.
+Es soll immer ein Passwort gesetzt werden, auch wenn keines nötig wäre.
+[BILD]
+4. Da dieser User kein Administrator werden soll, kann er in der primären Gruppe «users» gelassen
+werden und brauch keine sekundären Gruppen. Sobald alle Einstellungen gemacht sind, kann
+mit [Create] der User erstellt werden:
+[BILD]
+Nun sollte auf der Liste bereits der neue User ersichtlich sein.
+Ein Admin-User disablen:
+
+	Erstellen Sie nun einen zweiten Account "admin" mit Adminrechten und aktivieren Sie ihn!
+Nun kann dieser User «admin» angewählt und auf «Disable Selected Users» geklickt werden.
+Anschliessend sollte der User «admin» kursiv geschrieben sein. Dadurch kann man sehen, dass
+dieser deaktiviert wurde.
+
+## Qualitätskontrolle
+Mit dem folgenden Befehl kann man kontrollieren, ob der Webmin Service funktioniert. 
+> sudo service webmin status

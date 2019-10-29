@@ -86,7 +86,7 @@ misslingt… Grösse ca. 2.8MB)</li>
 Verzeichnisse angegeben werden.<br>
 Ebenfalls kann der Anmeldenamen auf Default gelassen werden, da er dann einfach <strong>«admin»</strong><br>
 lautet.<br>
-![](C:\Users\taamasaj\M157 LB3\IMG/1.png)</p>
+![](C:\Users\taamasaj\M157 LB3\IMG\1.png)</p>
 </li>
 <li>
 <p>Zum Schluss muss noch ein Passwort gesetzt werden.<br>

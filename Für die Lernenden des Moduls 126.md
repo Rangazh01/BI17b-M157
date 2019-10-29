@@ -8,10 +8,10 @@
 <h2 id="modul-126-webmin">Modul 126 Webmin</h2>
 <h2 id="für-die-lernenden-des-moduls-126"><em>Für die Lernenden des Moduls 126:</em></h2>
 <p><img src="https://thebroodle.com/wp-content/uploads/2017/06/Webmin-in-Raspberry-Pi.jpg" alt="enter image description here"></p>
-<pre><code>								Sarankan Mahendran
-								22.10.2019
-								Herr Calisto
-								BI17, TBZ
+<pre><code>					Sarankan Mahendran
+						22.10.2019
+						Herr Calisto
+						BI17, TBZ
 </code></pre>
 <h1 id="inhaltsverzeichnis">Inhaltsverzeichnis</h1>
 <ol>
@@ -86,7 +86,7 @@ misslingt… Grösse ca. 2.8MB)</li>
 Verzeichnisse angegeben werden.<br>
 Ebenfalls kann der Anmeldenamen auf Default gelassen werden, da er dann einfach <strong>«admin»</strong><br>
 lautet.<br>
-![](C:\Users\taamasaj\M157 LB3\IMG\1.png)</p>
+[BILD]
 </li>
 <li>
 <p>Zum Schluss muss noch ein Passwort gesetzt werden.<br>
